@@ -3,18 +3,18 @@ document.addEventListener('DOMContentLoaded', startGame)
 // Define your `board` object here!
 var board = {};
 // Attempt 1
- board.cells = [
-   {row:0, col:0, isMine:0, hidden:0},
-   {row:1, col:1, isMine:0, hidden:0},
-   {row:2, col:2, isMine:0, hidden:0},
-   {row:3, col:3, isMine:0, hidden:0}];
+ // board.cells = [
+ //   {row:0, col:0, isMine:0, hidden:0},
+ //   {row:1, col:1, isMine:0, hidden:0},
+ //   {row:2, col:2, isMine:0, hidden:0},
+ //   {row:3, col:3, isMine:0, hidden:0}];
 
 //Attempt 2
-// board.cells = [c1,c2,c3,c4];
-// var c1 = {};
-// var c2 = {};
-// var c3 = {};
-// var c4 = {};
+board.cells = [c1,c2,c3,c4];
+var c1 = {};
+var c2 = {};
+var c3 = {};
+var c4 = {};
 
 
 
