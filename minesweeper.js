@@ -4,20 +4,20 @@ document.addEventListener('DOMContentLoaded', startGame)
 var board = {};
 // Attempt 1
  board.cells = [
-   {row:0, col:0, isMine:0, hidden:true},
-   {row:0, col:1, isMine:0, hidden:true},
-   {row:0, col:2, isMine:0, hidden:true},
-   {row:1, col:0, isMine:0, hidden:true},
-   {row:1, col:1, isMine:0, hidden:true},
-   {row:1, col:2, isMine:0, hidden:true},
-   {row:2, col:0, isMine:0, hidden:true},
-   {row:2, col:1, isMine:0, hidden:true},
-   {row:2, col:2, isMine:0, hidden:true}];
+   {row:0, col:0, isMine:false, isMarked:false, hidden:true},
+   {row:0, col:1, isMine:false, isMarked:false, hidden:true},
+   {row:0, col:2, isMine:false, isMarked:false, hidden:true},
+   {row:1, col:0, isMine:false, isMarked:false, hidden:true},
+   {row:1, col:1, isMine:false, isMarked:false, hidden:true},
+   {row:1, col:2, isMine:false, isMarked:false, hidden:true},
+   {row:2, col:0, isMine:false, isMarked:false, hidden:true},
+   {row:2, col:1, isMine:false, isMarked:false, hidden:true},
+   {row:2, col:2, isMine:false, isMarked:false, hidden:true}];
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
   for(var x =0; x<board.cells.length; x++){
-    
+
   }
   lib.initBoard()
 }
