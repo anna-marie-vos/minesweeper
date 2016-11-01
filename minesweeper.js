@@ -4,10 +4,15 @@ document.addEventListener('DOMContentLoaded', startGame)
 var board = {};
 // Attempt 1
  board.cells = [
-   {row:0, col:0, isMine:0, hidden:0},
-   {row:0, col:1, isMine:0, hidden:0},
-   {row:1, col:0, isMine:0, hidden:0},
-   {row:1, col:1, isMine:0, hidden:0}];
+   {row:0, col:0, isMine:0, hidden:true},
+   {row:0, col:1, isMine:0, hidden:true},
+   {row:0, col:2, isMine:0, hidden:true},
+   {row:1, col:0, isMine:0, hidden:true},
+   {row:1, col:1, isMine:0, hidden:true},
+   {row:1, col:2, isMine:0, hidden:true},
+   {row:2, col:0, isMine:0, hidden:true},
+   {row:2, col:1, isMine:0, hidden:true},
+   {row:2, col:2, isMine:0, hidden:true}];
 
 //Attempt 2
 // board.cells = [c1,c2,c3,c4];
