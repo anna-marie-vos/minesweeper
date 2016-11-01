@@ -14,18 +14,11 @@ var board = {};
    {row:2, col:1, isMine:0, hidden:true},
    {row:2, col:2, isMine:0, hidden:true}];
 
-//Attempt 2
-// board.cells = [c1,c2,c3,c4];
-// var c1 = {};
-// var c2 = {};
-// var c3 = {};
-// var c4 = {};
-
-
-
-
 function startGame () {
   // Don't remove this function call: it makes the game work!
+  for(var x =0; x<board.cells.length; x++){
+    
+  }
   lib.initBoard()
 }
 
