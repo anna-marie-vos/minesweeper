@@ -40,10 +40,10 @@ function checkForWin () {
       markedCount +=1;
     } else{markedCount +=0;}
   }
-if(totalCount > markedCount){
-  return ;
-} else {
+if(totalCount == markedCount){
   return lib.displayMessage('You win!');
+} else {
+  return ;
 }
 
 
