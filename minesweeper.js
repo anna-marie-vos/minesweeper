@@ -6,10 +6,10 @@ var board = {};
  board.cells = [
    {row:0, col:0, isMine:false, isMarked:false, hidden:true},
    {row:0, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:0, col:2, isMine:false, isMarked:false, hidden:true},
+   {row:0, col:2, isMine:true, isMarked:false, hidden:true},
    {row:1, col:0, isMine:false, isMarked:false, hidden:true},
    {row:1, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:1, col:2, isMine:false, isMarked:false, hidden:true},
+   {row:1, col:2, isMine:true, isMarked:false, hidden:true},
    {row:2, col:0, isMine:false, isMarked:false, hidden:true},
    {row:2, col:1, isMine:false, isMarked:false, hidden:true},
    {row:2, col:2, isMine:false, isMarked:false, hidden:true}];
@@ -44,4 +44,18 @@ function checkForWin () {
 // It will return cell objects in an array. You should loop through
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
+  //find all the cells connected to the current cell
+  //if the current row is at 0 and the current col is at 0
+    // 
+
+  //read them into an array
+  //count how many "isMine" properties are true
+  //assign that to a value
+  //return the value
 }
+
+// for(var prop in board.cells){
+//   if(board.cells[prop].isMine ===true){
+//
+//   }
+// }
