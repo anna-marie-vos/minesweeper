@@ -46,10 +46,10 @@ function checkForWin () {
 function countSurroundingMines (cell) {
   //find all the cells connected to the current cell
   //if the current row is at 0 and the current col is at 0
-    // 
-
+    // for every cell from current cellrow+1 and for current cellCol+1
+     // check if it's isMine property is true
   //read them into an array
-  //count how many "isMine" properties are true
+  //count the length of the array
   //assign that to a value
   //return the value
 }
