@@ -45,13 +45,29 @@ function checkForWin () {
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
   //find all the cells connected to the current cell
-  //if the current row is at 0 and the current col is at 0
-    // for every cell from current cellrow+1 and for current cellCol+1
-     // check if it's isMine property is true
-  //read them into an array
-  //count the length of the array
-  //assign that to a value
-  //return the value
+    //if the current row is at 0 and the current col is at 0
+    //check if board.cells[x].row = currentRow +1 or board.cells[x].col + 1
+      // propery "isMine" is true.
+      // add it to the count
+   // if the current row is 0 then
+        // check if board.cells[x].row = currentRow + 1 or
+                  //board.cells[x].col = currentCol -1, or CurrentCol+1
+              // property "isMine" is true
+              //add it to the count
+  // if the current col is 0 then
+      // check if board.cells[x].col = currentCol +1 or
+                //board.cells[x].row = currentCol -1, or CurrentCol+1
+                // property "isMine" is true
+                // add it to the count.
+
+  // else  check if board.cells[x].row = currentCol -1, or CurrentCol+1
+                // or board.cells[x].col = currentCol -1, or CurrentCol+1
+              // property "isMine" is true
+              // add it to the count
+      // else add 0 to the count
+      //the maximum count ever needed will be x-1, x, x+1 (0,1,2) = 3 counts
+
+  //return the length of the array
 }
 
 // for(var prop in board.cells){
