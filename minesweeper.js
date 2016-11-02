@@ -2,38 +2,31 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {};
-var boardSize = 2;
-// Attempt 1
- board.cells = [defaultCell(5)];
-  //  {row:0, col:0, isMine:false, isMarked:false, hidden:true},
-  //  {row:0, col:1, isMine:false, isMarked:false, hidden:true},
-  //  {row:0, col:2, isMine:true, isMarked:false, hidden:true},
-  //  {row:0, col:3, isMine:true, isMarked:false, hidden:true},
-  //  {row:1, col:0, isMine:false, isMarked:false, hidden:true},
-  //  {row:1, col:1, isMine:false, isMarked:false, hidden:true},
-  //  {row:1, col:2, isMine:true, isMarked:false, hidden:true},
-  //  {row:1, col:3, isMine:false, isMarked:false, hidden:true},
-  //  {row:2, col:0, isMine:true, isMarked:false, hidden:true},
-  //  {row:2, col:1, isMine:false, isMarked:false, hidden:true},
-  //  {row:2, col:2, isMine:false, isMarked:false, hidden:true},
-  //  {row:2, col:3, isMine:false, isMarked:false, hidden:true},
-  //  {row:3, col:0, isMine:false, isMarked:false, hidden:true},
-  //  {row:3, col:1, isMine:false, isMarked:false, hidden:true},
-  //  {row:3, col:2, isMine:false, isMarked:false, hidden:true},
-  //  {row:3, col:3, isMine:false, isMarked:false, hidden:true}];
+var size = 4;
+
+ board.cells = createBoard();
 
   //autocreates the board
-  function defaultCell(num){
-    for(var x =0; x<num; x++){
-      for(var n = 0; n<num; n++){
-        this.row = x;
-        this.col = n;
+  //create a new cell with a specific row number and column number
+  function newCell(rowNum, colNum){
+        this.row = rowNum;
+        this.col = colNum;
         this.isMine = true;
         this.isMarked = false;
         this.hidden = true;
-      }
-    }
   }
+  //create a function that creates a number of object for the amount specified
+  function createBoard(){
+    var a = 0;
+    var cells = new Array();
+      for(var x =0; x<size; x++){
+        for(var n =0; n<size; n++){
+          cells[a] = new newCell(x,n);
+          a +=1;
+        }
+      }return cells;
+    }
+
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
