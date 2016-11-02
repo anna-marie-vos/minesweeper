@@ -32,7 +32,7 @@ function startGame () {
 function checkForWin () {
   var totalCount = 0;
   var markedCount = 0;
-  for(var x =0 , x < board.cells.length, x++){
+  for(var x =0; x < board.cells.length; x++){
     if (board.cells[x].isMine === true){
       totalCount +=1;
     } else {totalCount +=0;}
