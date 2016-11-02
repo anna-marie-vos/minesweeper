@@ -21,7 +21,8 @@ function startGame () {
     board.cells[x].surroundingMines =countOutput;
   }
   lib.initBoard()
-
+  document.addEventListener("click", checkForWin);
+  document.addEventListener("contextmenu", checkForWin);
 }
 
 // Define this function to look for a win condition:
