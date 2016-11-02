@@ -2,24 +2,38 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {};
+var boardSize = 2;
 // Attempt 1
- board.cells = [
-   {row:0, col:0, isMine:false, isMarked:false, hidden:true},
-   {row:0, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:0, col:2, isMine:true, isMarked:false, hidden:true},
-   {row:0, col:3, isMine:true, isMarked:false, hidden:true},
-   {row:1, col:0, isMine:false, isMarked:false, hidden:true},
-   {row:1, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:1, col:2, isMine:true, isMarked:false, hidden:true},
-   {row:1, col:3, isMine:false, isMarked:false, hidden:true},
-   {row:2, col:0, isMine:true, isMarked:false, hidden:true},
-   {row:2, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:2, col:2, isMine:false, isMarked:false, hidden:true},
-   {row:2, col:3, isMine:false, isMarked:false, hidden:true},
-   {row:3, col:0, isMine:false, isMarked:false, hidden:true},
-   {row:3, col:1, isMine:false, isMarked:false, hidden:true},
-   {row:3, col:2, isMine:false, isMarked:false, hidden:true},
-   {row:3, col:3, isMine:false, isMarked:false, hidden:true}];
+ board.cells = [defaultCell(5)];
+  //  {row:0, col:0, isMine:false, isMarked:false, hidden:true},
+  //  {row:0, col:1, isMine:false, isMarked:false, hidden:true},
+  //  {row:0, col:2, isMine:true, isMarked:false, hidden:true},
+  //  {row:0, col:3, isMine:true, isMarked:false, hidden:true},
+  //  {row:1, col:0, isMine:false, isMarked:false, hidden:true},
+  //  {row:1, col:1, isMine:false, isMarked:false, hidden:true},
+  //  {row:1, col:2, isMine:true, isMarked:false, hidden:true},
+  //  {row:1, col:3, isMine:false, isMarked:false, hidden:true},
+  //  {row:2, col:0, isMine:true, isMarked:false, hidden:true},
+  //  {row:2, col:1, isMine:false, isMarked:false, hidden:true},
+  //  {row:2, col:2, isMine:false, isMarked:false, hidden:true},
+  //  {row:2, col:3, isMine:false, isMarked:false, hidden:true},
+  //  {row:3, col:0, isMine:false, isMarked:false, hidden:true},
+  //  {row:3, col:1, isMine:false, isMarked:false, hidden:true},
+  //  {row:3, col:2, isMine:false, isMarked:false, hidden:true},
+  //  {row:3, col:3, isMine:false, isMarked:false, hidden:true}];
+
+  //autocreates the board
+  function defaultCell(num){
+    for(var x =0; x<num; x++){
+      for(var n = 0; n<num; n++){
+        this.row = x;
+        this.col = n;
+        this.isMine = true;
+        this.isMarked = false;
+        this.hidden = true;
+      }
+    }
+  }
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
@@ -28,6 +42,7 @@ function startGame () {
     board.cells[x].surroundingMines =countOutput;
   }
   lib.initBoard()
+  //checks if the player wins.
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
 }
@@ -54,8 +69,6 @@ if(totalCount === markedCount){
 } else {
   return ;
 }
-
-
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   //   lib.displayMessage('You win!')
@@ -83,32 +96,3 @@ function countSurroundingMines (cell) {
 
   //return the length of the array
 }
-
-// for(var prop in board.cells){
-//   if(board.cells[prop].isMine ===true){
-//
-//   }
-// }
-// how to count the currounding mines
-//find all the cells connected to the current cell
-  //if the current row is at 0 and the current col is at 0
-  //check if board.cells[x].row = currentRow +1 or board.cells[x].col + 1
-    // propery "isMine" is true.
-    // add it to the count
- // if the current row is 0 then
-      // check if board.cells[x].row = currentRow + 1 or
-                //board.cells[x].col = currentCol -1, or CurrentCol+1
-            // property "isMine" is true
-            //add it to the count
-// if the current col is 0 then
-    // check if board.cells[x].col = currentCol +1 or
-              //board.cells[x].row = currentCol -1, or CurrentCol+1
-              // property "isMine" is true
-              // add it to the count.
-
-// else  check if board.cells[x].row = currentCol -1, or CurrentCol+1
-              // or board.cells[x].col = currentCol -1, or CurrentCol+1
-            // property "isMine" is true
-            // add it to the count
-    // else add 0 to the count
-    //the maximum count ever needed will be x-1, x, x+1 (0,1,2) = 3 counts
