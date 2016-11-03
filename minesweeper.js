@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {};
+var a = 3;
+function getSize(size){
+  a = size;
+  return a;
+}
 
-
- board.cells = createBoard(4);
+board.cells = createBoard(a);
 
   //autocreates the board
   //create a new cell with a specific row number and column number
@@ -15,26 +19,27 @@ var board = {};
         this.isMarked = false;
         this.hidden = true;
   }
+  //generates random true or false.
+  function mineGenerator(){
+    var mineGen = Math.random()+0.3;
+    if (mineGen < 0.5){
+      return true;
+    }else {
+      return false;
+    }
+  }
   //create a function that creates a number of object for the amount specified
   function createBoard(size){
     var a = 0;
-    var cells = new Array();
+    var blocks = new Array();
       for(var x =0; x<size; x++){
         for(var n =0; n<size; n++){
-          cells[a] = new newCell(x,n);
+          blocks[a] = new newCell(x,n);
           a +=1;
         }
-      }return cells;
+      }return blocks;
     }
-//generates random true or false.
-function mineGenerator(){
-  var mineGen = Math.random()+0.3;
-  if (mineGen < 0.5){
-    return true;
-  }else {
-    return false;
-  }
-}
+
 
 //create a function to reset the board
   function resetBoard(){

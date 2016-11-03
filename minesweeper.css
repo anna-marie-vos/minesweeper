@@ -58,3 +58,6 @@ div.hidden:hover {
 div.marked, div.marked:hover {
   background: no-repeat center/60% url("images/mark.svg") deepskyblue;
 }
+.buttons{
+    display: inline-flex;
+}
