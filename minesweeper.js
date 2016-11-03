@@ -26,6 +26,25 @@ var size = 4;
         }
       }return cells;
     }
+//create a function to reset the board
+  function resetBoard(){
+    //var allDivs = document.getElementsByTagName('div');
+    // for(var x = 0; x < allDivs.length; x++){
+    //   if (allDivs[x].classList !=="board"){
+    //     allDivs[x].parentNode.removeChild(allDivs[x]);
+    //   }
+    // } createBoard();
+    var allDivs = document.getElementsByTagName('board');
+    for(var x = 0; x < allDivs.length; x++){
+      allDivs[x].parentNode.removeChild(allDivs[0]);
+    }
+    var newDiv = document.createElement('div');
+    newDiv.className = "board";
+    //neDiv.
+    return document.body.appendChild(newDiv);
+    createBoard();
+    startGame();
+  }
 
 
 function startGame () {
@@ -38,7 +57,7 @@ function startGame () {
   //checks if the player wins.
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
-}
+  }
 
 // Define this function to look for a win condition:
 //
