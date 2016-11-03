@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {};
-var size = 4;
+
 
  board.cells = createBoard();
 
@@ -16,7 +16,7 @@ var size = 4;
         this.hidden = true;
   }
   //create a function that creates a number of object for the amount specified
-  function createBoard(){
+  function createBoard(size){
     var a = 0;
     var cells = new Array();
       for(var x =0; x<size; x++){
@@ -90,7 +90,8 @@ function checkForWin () {
     }
   }
 if(totalCount === markedCount){
-  return lib.displayMessage('You win!');
+  var sound = document.getElementById('winner');
+  return lib.displayMessage('You win!') + sound;
 } else {
   return ;
 }
