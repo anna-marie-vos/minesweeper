@@ -28,22 +28,22 @@ var size = 4;
     }
 //create a function to reset the board
   function resetBoard(){
+    location.reload();
     //var allDivs = document.getElementsByTagName('div');
     // for(var x = 0; x < allDivs.length; x++){
     //   if (allDivs[x].classList !=="board"){
     //     allDivs[x].parentNode.removeChild(allDivs[x]);
     //   }
     // } createBoard();
-    var allDivs = document.getElementsByTagName('board');
-    for(var x = 0; x < allDivs.length; x++){
-      allDivs[x].parentNode.removeChild(allDivs[0]);
-    }
-    var newDiv = document.createElement('div');
-    newDiv.className = "board";
-    //neDiv.
-    return document.body.appendChild(newDiv);
-    createBoard();
-    startGame();
+    // var allDivs = document.getElementsByTagName('board');
+    // for(var x = 0; x < allDivs.length; x++){
+    //   allDivs[x].parentNode.removeChild(allDivs[0]);
+    // }
+    // var newDiv = document.createElement('div');
+    // newDiv.className = "board";
+    // //neDiv.
+    // return document.body.appendChild(newDiv);
+    board.cells = createBoard();
   }
 
 
