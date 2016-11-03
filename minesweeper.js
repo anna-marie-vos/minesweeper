@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', startGame)
 var board = {};
 
 
- board.cells = createBoard();
+ board.cells = createBoard(4);
 
   //autocreates the board
   //create a new cell with a specific row number and column number
