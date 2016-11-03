@@ -11,7 +11,7 @@ var size = 4;
   function newCell(rowNum, colNum){
         this.row = rowNum;
         this.col = colNum;
-        this.isMine = true;
+        this.isMine = mineGenerator();
         this.isMarked = false;
         this.hidden = true;
   }
@@ -26,6 +26,16 @@ var size = 4;
         }
       }return cells;
     }
+//generates random true or false.
+function mineGenerator(){
+  var mineGen = Math.random()+0.3;
+  if (mineGen < 0.5){
+    return true;
+  }else {
+    return false;
+  }
+}
+
 //create a function to reset the board
   function resetBoard(){
     location.reload();
