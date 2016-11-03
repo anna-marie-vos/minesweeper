@@ -80,11 +80,14 @@ function checkForWin () {
     if (board.cells[x].isMine === true){
       totalCount +=1;
     } else {totalCount +=0;}
+
     if(board.cells[x].isMine ===false && board.cells[x].isMarked === true){
       return;
     } else if(board.cells[x].isMine === true && board.cells[x].isMarked === true){
       markedCount +=1;
-    } else {markedCount +=0;}
+    } else if(board.cells[x].hidden ===true){
+      return;
+    }
   }
 if(totalCount === markedCount){
   return lib.displayMessage('You win!');
