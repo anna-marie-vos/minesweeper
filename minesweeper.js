@@ -1,15 +1,18 @@
-document.addEventListener('DOMContentLoaded', startGame)
+document.addEventListener('DOMContentLoaded', startGame);
 
 // Define your `board` object here!
 var board = {};
-var a = 3;
-function getSize(size){
-  a = size;
-  return a;
-}
+board.cells = createBoard(4);
 
-board.cells = createBoard(a);
-
+//create a function that creates a number of object for the amount specified
+function createBoard(size){
+  var cells = new Array(); //make new array
+    for(var x =0; x<size; x++){ //count the rows
+      for(var n =0; n<size; n++){ //count the columns in the rows
+        cells.push(new newCell(x,n)); //add the newCell object to the array
+        }
+    } return cells;
+  }
   //autocreates the board
   //create a new cell with a specific row number and column number
   function newCell(rowNum, colNum){
@@ -28,36 +31,10 @@ board.cells = createBoard(a);
       return false;
     }
   }
-  //create a function that creates a number of object for the amount specified
-  function createBoard(size){
-    var a = 0;
-    var blocks = new Array();
-      for(var x =0; x<size; x++){
-        for(var n =0; n<size; n++){
-          blocks[a] = new newCell(x,n);
-          a +=1;
-        }
-      }return blocks;
-    }
-
 
 //create a function to reset the board
   function resetBoard(){
     location.reload();
-    //var allDivs = document.getElementsByTagName('div');
-    // for(var x = 0; x < allDivs.length; x++){
-    //   if (allDivs[x].classList !=="board"){
-    //     allDivs[x].parentNode.removeChild(allDivs[x]);
-    //   }
-    // } createBoard();
-    // var allDivs = document.getElementsByTagName('board');
-    // for(var x = 0; x < allDivs.length; x++){
-    //   allDivs[x].parentNode.removeChild(allDivs[0]);
-    // }
-    // var newDiv = document.createElement('div');
-    // newDiv.className = "board";
-    // //neDiv.
-    // return document.body.appendChild(newDiv);
     board.cells = createBoard();
   }
 
@@ -68,7 +45,7 @@ function startGame () {
     var countOutput = countSurroundingMines(board.cells[x]);
     board.cells[x].surroundingMines =countOutput;
   }
-  lib.initBoard()
+  lib.initBoard();
   //checks if the player wins.
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
