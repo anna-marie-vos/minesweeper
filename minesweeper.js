@@ -33,16 +33,15 @@ function createBoard(size){
 
 //create a function to reset the board
   function resetBoard(){
-    //location.reload();
+    location.reload();
     //this removes every div Item that is named 'board'.
-    var x = document.getElementsByClassName('board');
-
-    for(var a=0; a< x.length; a++){
-      x[a].parentNode.removeChild(x[0]);
-    }
-
-    document.body.innerHTML += '<div class="board"></div>'; //create a new board div
-    startGame();
+    // var x = document.getElementsByClassName('board');
+    // for(var a=0; a< x.length; a++){
+    //   x[a].parentNode.removeChild(x[0]);
+    // }
+    //create a new board div
+    // document.body.innerHTML += '<div class="board"></div>';
+    // startGame();
   }
 
 
