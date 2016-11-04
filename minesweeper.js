@@ -13,7 +13,6 @@ function createBoard(size){
         }
     } return cells;
   }
-  //autocreates the board
   //create a new cell with a specific row number and column number
   function newCell(rowNum, colNum){
         this.row = rowNum;
@@ -34,7 +33,14 @@ function createBoard(size){
 
 //create a function to reset the board
   function resetBoard(){
-    location.reload();
+    //location.reload();
+    //find all the child elements of the parent with the classname "board"
+    //this removes every div Item that is named 'board'.
+    var x = document.getElementsByClassName('board');
+    for(var a=0; a< x.length; a++){
+      x[a].parentNode.removeChild(x[0]);
+    }
+    
     board.cells = createBoard();
   }
 
