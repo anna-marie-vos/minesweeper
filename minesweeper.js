@@ -43,6 +43,15 @@ function createBoard(size){
     // document.body.innerHTML += '<div class="board"></div>';
     // startGame();
   }
+  //add functions to play a sound
+function winnerSound(){
+  var sound = document.getElementById('winner');
+  sound.play();
+}
+function boomsound(){
+  var sound = document.getElementById('bomb');
+  sound.play();
+}
 
 
 function startGame () {
@@ -55,6 +64,11 @@ function startGame () {
   //checks if the player wins.
   document.addEventListener("click", checkForWin);
   document.addEventListener("contextmenu", checkForWin);
+//check all cells thats mines for a click
+  var check = document.getElementsByClassName('mine');
+    for(var x =0; x< check.length; x++){
+    check[x].addEventListener('click',boomsound);
+    }
   }
 
 // Define this function to look for a win condition:
@@ -78,8 +92,8 @@ function checkForWin () {
     }
   }
 if(totalCount === markedCount){
-  var sound = document.getElementById('winner');
-  return lib.displayMessage('You win!') + sound.play;
+  lib.displayMessage('You win!')
+  winnerSound();
 } else {
   return ;
 }
