@@ -73,7 +73,7 @@ function checkForWin () {
   }
 if(totalCount === markedCount){
   var sound = document.getElementById('winner');
-  return lib.displayMessage('You win!') + sound;
+  return lib.displayMessage('You win!') + sound.play;
 } else {
   return ;
 }
