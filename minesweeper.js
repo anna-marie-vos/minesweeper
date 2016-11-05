@@ -35,7 +35,7 @@ function createBoard(size){
   function newCell(rowNum, colNum){
         this.row = rowNum;
         this.col = colNum;
-        this.isMine = mineGenerator();
+        this.isMine = mineGenerator(); //randomly assign mines
         this.isMarked = false;
         this.hidden = true;
   }
@@ -51,7 +51,7 @@ function createBoard(size){
 
 //create a function to reset the board
   function resetBoard(){
-    //location.reload(); //reload the page. 
+    //location.reload(); //reload the page.
     //adding all the child elements of a parent in an array
     var allDivs = document.getElementsByClassName('board')[0].childNodes;
     var len = allDivs.length;
@@ -62,10 +62,6 @@ function createBoard(size){
     .removeChild(document.getElementsByClassName('board')[0]);
     //create a new board
     document.body.innerHTML +='<div class = "board"></div>';
-    //create a new board
-    board.cells = createBoard(difficulty);
-    //start the game
-    startGame();
 
   }
   //function to remove all the classes from every cell
@@ -117,7 +113,6 @@ function startGame () {
   }
 
 // Define this function to look for a win condition:
-//
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
