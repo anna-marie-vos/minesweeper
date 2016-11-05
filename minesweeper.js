@@ -60,7 +60,9 @@ function createBoard(size){
       for(var x = 0; x<a ; x++){
         var c = blocks[x].classList.length;
         for(var g = 0; g<c;g++){
-          console.log(blocks[x].classList[g]);
+          var currentClass = blocks[x].classList[0];
+            blocks[x].classList.remove(currentClass);
+            console.log(blocks[x].classList);
         }
 
       console.log(blocks[x].classList);
