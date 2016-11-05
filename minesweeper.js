@@ -5,7 +5,7 @@ board.cells = createBoard(4);
 //function to start the game at different difficulties
 function difficulty(size){
   resetBoard();
- switch(this.id){
+ switch(this.id){ //grab the id. and check it. make a new board based on the id.
    case 'easy': board.cells = createBoard(4);
    startGame();
    break;
