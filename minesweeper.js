@@ -1,8 +1,26 @@
 document.addEventListener('DOMContentLoaded', startGame);
-
 // Define your `board` object here!
 var board = {};
 board.cells = createBoard(4);
+//function to start the game at different difficulties
+function difficulty(size){
+  resetBoard();
+ switch(this.id){
+   case 'easy': board.cells = createBoard(3);
+   startGame();
+   break;
+   case 'intermediate': board.cells = createBoard(4);
+   startGame();
+   break;
+   case 'hard':
+   board.cells = createBoard(5);
+   startGame();
+   break;
+   default:
+   board.cells = createBoard(4);
+   startGame();
+ }
+}
 
 //create a function that creates a number of object for the amount specified
 function createBoard(size){
@@ -45,7 +63,7 @@ function createBoard(size){
     //create a new board
     document.body.innerHTML +='<div class = "board"></div>';
     //create a new board
-    board.cells = createBoard(4);
+    board.cells = createBoard(difficulty);
     //start the game
     startGame();
 
@@ -75,6 +93,12 @@ function boomsound(){
 
 
 function startGame () {
+  //if the button is clicked make a new board
+   document.getElementById('easy').addEventListener("click",difficulty);
+   document.getElementById('intermediate').addEventListener("click",difficulty);
+   document.getElementById('hard').addEventListener("click",difficulty);
+
+
   // Don't remove this function call: it makes the game work!
   for(var x =0; x<board.cells.length; x++){
     var countOutput = countSurroundingMines(board.cells[x]);
@@ -89,6 +113,7 @@ function startGame () {
     for(var x =0; x< check.length; x++){
     check[x].addEventListener('click',boomsound);
     }
+
   }
 
 // Define this function to look for a win condition:
