@@ -34,40 +34,35 @@ function createBoard(size){
 //create a function to reset the board
   function resetBoard(){
     //location.reload();
-    //this removes every div Item that is named 'board'.
-    // var x = document.getElementsByClassName('board');
-    // for(var a=0; a< x.length; a++){
-    //   x[a].parentNode.removeChild(x[0]);
-    // }
-    //create a new board div
-    // document.body.innerHTML += '<div class="board"></div>';
-    // startGame();
-
-    //attempt 2
-    //grab all the hidden and not hidden cells
-    // var cellNotHid = document.querySelectorAll('div:not([hidden])');
-    // var cellHid = document.getElementsByClassName('hidden');
-    // removeDiv(cellNotHid);
-    // removeDiv(cellHid);
-
     //adding all the child elements of a parent in an array
     var allDivs = document.getElementsByClassName('board')[0].childNodes;
     var len = allDivs.length;
-    removeDiv(allDivs,len);
+    // clear all the classes from every cell
+    clearClasses(allDivs,len);
+    //remove the board
+    document.getElementsByClassName('board')[0].parentNode
+    .removeChild(document.getElementsByClassName('board')[0]);
+    //create a new board
+    document.body.innerHTML +='<div class = "board"></div>';
+    //create a new board
+    board.cells = createBoard(4);
+    //start the game
+    startGame();
+
   }
-  function removeDiv(all,a){
+  //function to remove all the classes from every cell
+  function clearClasses(all,l){
     var blocks = all;
-      for(var x = 0; x<a ; x++){
-        var c = blocks[x].classList.length;
-        for(var g = 0; g<c;g++){
+      for(var x = 0; x<l ; x++){
+        var y = blocks[x].classList.length;
+        for(var a = 0; a<y;a++){
           var currentClass = blocks[x].classList[0];
             blocks[x].classList.remove(currentClass);
-            console.log(blocks[x].classList);
         }
-
-      console.log(blocks[x].classList);
-    }return blocks;
+    }
   }
+
+
   //add functions to play a sound
 function winnerSound(){
   var sound = document.getElementById('winner');
