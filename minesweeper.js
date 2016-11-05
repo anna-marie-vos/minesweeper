@@ -6,14 +6,14 @@ board.cells = createBoard(4);
 function difficulty(size){
   resetBoard();
  switch(this.id){
-   case 'easy': board.cells = createBoard(3);
+   case 'easy': board.cells = createBoard(4);
    startGame();
    break;
-   case 'intermediate': board.cells = createBoard(4);
+   case 'intermediate': board.cells = createBoard(5);
    startGame();
    break;
    case 'hard':
-   board.cells = createBoard(5);
+   board.cells = createBoard(6);
    startGame();
    break;
    default:
@@ -51,7 +51,7 @@ function createBoard(size){
 
 //create a function to reset the board
   function resetBoard(){
-    //location.reload();
+    //location.reload(); //reload the page. 
     //adding all the child elements of a parent in an array
     var allDivs = document.getElementsByClassName('board')[0].childNodes;
     var len = allDivs.length;
