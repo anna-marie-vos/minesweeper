@@ -86,8 +86,10 @@ function boomsound(){
   var sound = document.getElementById('bomb');
   sound.play();
 }
-
-
+function clickSound(){
+  var sound = document.getElementById('clicky');
+  sound.play();
+}
 function startGame () {
   //if the button is clicked make a new board
    document.getElementById('easy').addEventListener("click",difficulty);
@@ -103,6 +105,7 @@ function startGame () {
   lib.initBoard();
   //checks if the player wins.
   document.addEventListener("click", checkForWin);
+  document.addEventListener("click",clickSound);
   document.addEventListener("contextmenu", checkForWin);
 //check all cells thats mines for a click
   var check = document.getElementsByClassName('mine');
